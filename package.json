@@ -1,0 +1,24 @@
+{
+  "name": "ES6stydy",
+  "version": "1.0.0",
+  "description": "这是一个es6的学习过程",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/index.js -o dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuhan0927/ES6stydy.git"
+  },
+  "keywords": [],
+  "author": "yuhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhan0927/ES6stydy/issues"
+  },
+  "homepage": "https://github.com/yuhan0927/ES6stydy#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
