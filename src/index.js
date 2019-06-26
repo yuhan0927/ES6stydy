@@ -84,6 +84,8 @@ document.write(blog.endsWith(llm)) //结尾是否有
 document.write(llm.repeat(3)) //打印三次llm
 */
 
+
+/*
 // 数字操作
 let binary = 0B010101;
 console.log(binary)
@@ -98,3 +100,59 @@ console.log(Number.isFinite(NaN));
 console.log(Number.isFinite(undefined));
 console.log(Number.isNaN(NaN))
 console.log(Number.isInteger(918.1))
+*/
+
+
+// json 数组格式
+// let json = {
+//     '0' : 'yuhan',
+//     '1' : 'zhenlihai',
+//     '2' : 'heiheihei',
+//     length:3
+// }
+
+// let arr = Array.from(json)
+// console.log(arr)  //['yuhan','zhenlihai','heiheihei']
+
+// // Array.of 方法
+// let arr = Array.of(3,4,5,6);  //转化为数组
+// console.log(arr)  //[3,4,5,6]
+
+
+// find() 实例方法
+// value 当前查找的值  index值得索引  arr 数组原型
+let arr = [1,2,3,4,5,6,7,8,9];
+console.log(arr.find(function(value,index,arr){
+    return value > 5
+}))
+let arr1 = ['yuhan','hahah'];
+console.log(arr1.find(function(value,index,arr){
+    return value == 'yuhan'
+}))
+
+// fill 替换数组中得元素  第一个参数替换成什么 第二个参数替换值的下标，第三个参数借书至某下标处
+let arr2 = ['yuhan','喻晗','小可爱']
+arr2.fill('老流氓',1,3) 
+console.log(arr2) // ['yuhan','老流氓','老流氓']
+
+// 数组循环
+let arr3 = ['yuhan','喻晗','小可爱']
+for ( let item of arr3){
+    console.log(item)
+}
+for ( let item of arr3.keys()){
+    console.log(item)
+}
+for ( let item of arr3.entries()){
+    console.log(item)
+}
+for ( let [index,vale] of arr3.entries()){
+    console.log(index+':'+vale)
+}
+// entries
+let list = arr3.entries();  //不规则的循环 生成条目进行输出
+console.log(list.next().value)
+console.log('ddddddddddddddd')
+console.log(list.next().value)
+console.log('++++++++++++=++')
+console.log(list.next().value)
