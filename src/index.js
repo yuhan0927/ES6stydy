@@ -108,7 +108,7 @@ console.log(Number.isInteger(918.1))
 //     '0' : 'yuhan',
 //     '1' : 'zhenlihai',
 //     '2' : 'heiheihei',
-//     length:3
+//     length:3  //需要加上length属性
 // }
 
 // let arr = Array.from(json)
