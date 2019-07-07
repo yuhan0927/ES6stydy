@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = function(name,age) {
+            var obj = new Object()
+            obj.name = name;
+            obj.age = age
+            return obj
+        }
+        obj1 = obj('gd',15)
+        obj2 = obj('hj',45)
+
+        function Person(name,age) {
+            this.name =name;
+            this.age = age;
+            this.sayname = fun;
+            // 在构造函数内部创建方法，外部每实例化一个对象就就会创建一个方法。实例化10000个对象就相当于创建了10000次方法，非常占用内存空间
+            // this.sayname= function() {
+            //     console.log(this.name)
+            // }
+        }
+        // 将函数定义在全局作用域中，会污染全局作用域的命名空间，而且定义在全局作用域也不安全，一旦在全局取了相同的sayname名就不安全
+        function fun () {
+            alert(this.name)
+        }
+        var per = new Person('dfs',45)
+        var per2 = new Person('hgf',45)
+        per.sayname()
+        console.log(per instanceof Person)
+        console.log(obj1 instanceof Object)
+    </script>
+</body>
+</html>
