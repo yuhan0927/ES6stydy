@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 深浅拷贝 -->
+  <!-- <script>
+  let obj ={
+    name:'一只酱',
+    age:'20',
+    like:['game','coding']
+  }
+  // 浅拷贝
+  // // 对象拼接
+  // let obj2 = Object.assign({},obj)
+  // // // 对象解构
+  // let obj3 = {...obj}
+  // obj.name = 'kryJiang'
+  // obj.like.push('movie')
+  // console.log(obj2,obj3)
+
+
+  // 深拷贝
+  let obj4 = JSON.parse(JSON.stringify(obj))
+  obj.name = 'kryJiang'
+  obj.like.push('movie')
+  console.log(obj4)
+  </script> -->
+  <script>
+    // 递归拷贝
+    // Weakmap() 规定数据类型只能为obj的一个方法
+  function deepCopy(obj,hash = new WeakMap()){
+     // RegExp 正则类型
+    if(obj instanceof RegExp) return new RegExp(obj)
+    // Date 类型
+    if(obj instanceof Date) return new Date(obj)
+    // 不是复杂数据类型时，直接返回
+    if(obj === null || typeof obj !== 'object'){
+      return obj
+    }
+    // 
+    if(hash.has(obj)){
+      return hash.get(obj)
+    }
+    // 当obj是数组时，obj.constructor是一个[Function:Array] 
+    // 当obj是对象时，obj.constructor是一个[Function:Object] 
+    let t = new Object.constructor()
+    hash.set(obj,t)
+    for(let key in obj){
+      // 递归
+      if(obj.hasOwmProperty(key)){ //判断出是否是自己的属性
+        t[key] = deepCopy(obj[key],hash)
+      }
+    }
+    return t
+  }
+  </script>
+</body>
+</html>

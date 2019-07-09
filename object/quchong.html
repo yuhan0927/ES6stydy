@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,5,3,1,1,2,3,4]
+        // 获取数组中所有元素
+        for(var i=0; i<arr.length; i++){
+            // 获取i下标的后面元素
+            for(var j=i+1; j<arr.length; j++){
+                // 如果相同删除j
+                if(arr[i] == arr[j]){
+                    arr.splice(j,1)
+                    // splice会影响元素组所以删除一位元素后，后面元素会自动补位此时需要重新比较当前位置的值
+                    // 让j的位置往后退一位
+                    j -= 1
+                    // console.log(arr)
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>

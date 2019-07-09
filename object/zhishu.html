@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>质数</title>
+</head>
+<body>
+    <script>
+        // arr=[2,3,4,5,6,7,8,9,10,11,12]
+        for(var i=2; i<=100; i++){
+            var flag = true
+            for(var j=2;j<i;j++){
+                if (i % j == 0 )
+                flag = false
+            }
+            if(flag){
+                console.log(i)
+            }
+        }
+    </script>
+    
+</body>
+</html>
